@@ -6,7 +6,7 @@
 /*   By: aouanni <aouanni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 11:26:12 by aouanni           #+#    #+#             */
-/*   Updated: 2025/01/16 16:53:51 by aouanni          ###   ########.fr       */
+/*   Updated: 2025/05/22 18:54:30 by aouanni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,12 +119,12 @@ int	map_validat(t_game *data, char *map_name)
 		ft_putstr_fd("Error\nInvalide charcter founded in the map", 2);
 		return (0);
 	}
+	if (!is_map_very_big(data))
+		return (0);
 	if (!check_path(data))
 	{
 		ft_putstr_fd ("Error\nInvalid map path", 2);
 		return (0);
 	}
-	if (!is_map_very_big(data))
-		return (0);
 	return (1);
 }
